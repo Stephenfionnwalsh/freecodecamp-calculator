@@ -1,0 +1,32 @@
+.Button {
+  background: #4d4d4d;
+  color: #fff;
+  height: 65px;
+  font-size: 20px;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+
+  &__square {
+    width: 25%;
+  }
+
+  &__verticalRectangle {
+    background-color: rgb(0, 68, 102);
+    bottom: 5px;
+    height: 130px;
+    position: absolute;
+    width: 24%;
+  }
+
+  &__horizontalRectangleRed {
+    width: 50%;
+    background-color: #ac3939;
+  }
+
+  &__horizontalRectangleGrey {
+    width: 50%;
+  }
+}
