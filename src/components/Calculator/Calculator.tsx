@@ -1,17 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Button from "../Button/Button";
 import CalculatorWrapper from "../CalculatorWrapper/CalculatorWrapper";
+import Formula from "../Formula/Fomula";
+import Output from "../Output/Output";
 
 const Calculator = () => {
   const [currentSelectedCharacter, setCurrentselectedCharacter] = useState("0");
+  const [formula, setFormula] = useState("");
+
+  useEffect(() => {
+    if (currentSelectedCharacter !== "0") {
+      setFormula(formula + currentSelectedCharacter);
+    }
+  }, [currentSelectedCharacter]);
+
   const getSelectedCharacterOnClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    setCurrentselectedCharacter(event.currentTarget.value);
+    if (event.currentTarget.value !== "=")
+      setCurrentselectedCharacter(event.currentTarget.value);
   };
+
   return (
     <CalculatorWrapper>
+      <Formula formula={formula} />
+      <Output output={currentSelectedCharacter} />
       <Button
         onClick={getSelectedCharacterOnClick}
         buttonType="horizontalRectangleRed"
