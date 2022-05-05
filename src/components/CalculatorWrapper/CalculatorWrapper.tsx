@@ -1,4 +1,4 @@
-import react, { FC } from "react";
+import { FC } from "react";
 import styles from "./CalculatorWrapper.module.scss";
 
 const CalculatorWrapper: FC = ({ children }) => (
